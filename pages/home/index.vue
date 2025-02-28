@@ -5,7 +5,7 @@
         <div class="flex items-center justify-between">
           <!-- Logo bên trái -->
           <div class="flex-1">
-            <div>
+            <div class="space-y-4">
               <h1 class="text-2xl font-bold">Chào mừng đến với N.T.T 🎉</h1>
               <p class="text-gray-600">
                 là người có kỹ năng, kiến thức và chiến lược bán hàng bài bản.
