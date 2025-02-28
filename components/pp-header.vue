@@ -1,5 +1,12 @@
 <template>
-  <header class="sticky top-0 w-full bg-white shadow-md z-50 p-4">
+  <header
+    class="sticky top-0 w-full shadow-sm z-50 p-4"
+    :class="
+      colorMode.preference === 'light' || colorMode.preference === 'system'
+        ? 'bg-white'
+        : 'bg-black'
+    "
+  >
     <div class="max-w-7xl mx-auto">
       <nav class="flex items-center justify-between">
         <!-- Logo bên trái -->
@@ -24,10 +31,6 @@
           >
 
           <!-- Nút đăng xuất -->
-          <!-- <button class="flex items-center text-red-500 hover:text-red-600">
-            <Icon name="heroicons-outline:logout" class="w-5 h-5" />
-            <span class="ml-2">Đăng xuất</span>
-          </button> -->
           <UDropdown :items="items" :popper="{ placement: 'bottom-start' }">
             <UButton
               color="white"
@@ -35,6 +38,16 @@
               trailing-icon="i-heroicons-chevron-down-20-solid"
             />
           </UDropdown>
+
+          <UButton
+            @click="
+              colorMode.preference =
+                colorMode.preference === 'dark' ? 'light' : 'dark'
+            "
+          >
+            <span v-if="colorMode.preference === 'dark'">🌙 Tối</span>
+            <span v-else>☀️ Sáng</span>
+          </UButton>
         </div>
       </nav>
     </div>
@@ -42,6 +55,8 @@
 </template>
 
 <script setup lang="ts">
+const colorMode = useColorMode();
+
 const navItems = [
   { label: "CV của tôi", to: "/" },
   { label: "Story", to: "/about" },
