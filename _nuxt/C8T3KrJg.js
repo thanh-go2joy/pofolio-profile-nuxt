@@ -1,0 +1,1 @@
+import{useMeta as e}from"./Dt-IjX3O.js";import{c as s,a as t,e as r,o as a}from"./BNCk_lVi.js";const c=""+new URL("seller.qz9hzqCO.webp",import.meta.url).href,o={class:"flex justify-center items-center"},n=["src"],d={__name:"index",setup(l){return e(),(m,_)=>(a(),s("div",o,[t("img",{src:r(c),alt:"Card Image",class:"rounded-lg object-cover"},null,8,n)]))}};export{d as default};

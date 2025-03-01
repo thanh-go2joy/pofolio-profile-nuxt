@@ -1,0 +1,1 @@
+import{u as n}from"./BNCk_lVi.js";function t(){n({title:"Nguyễn Thanh Thảo",meta:[{name:"description",content:"Blog Nguyễn Thanh Thảo"},{property:"og:title",content:"Nguyễn Thanh Thảo"},{property:"og:description",content:"Blog Nguyễn Thanh Thảo"}]})}export{t as useMeta};

@@ -1,0 +1,1 @@
+import{u as n}from"./BNCk_lVi.js";function o(){n({title:"Nguyễn Thanh Thảo",meta:[{name:"description",content:"CV Nguyễn Thanh Thảo"},{property:"og:title",content:"Nguyễn Thanh Thảo"},{property:"og:description",content:"CV Nguyễn Thanh Thảo"}]})}export{o as useMeta};
