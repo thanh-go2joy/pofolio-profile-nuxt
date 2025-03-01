@@ -144,7 +144,9 @@
                     </p>
                 </div>
 
-                <div class="flex items-center justify-between space-x-6">
+                <div
+                    class="md:flex items-center justify-between space-y-6 md:space-x-6"
+                >
                     <div
                         class="max-w-xl mx-auto flex flex-col space-y-6 mt-[46px]"
                     >
@@ -255,7 +257,7 @@
                         </div>
                     </div>
 
-                    <div class="border">
+                    <div class="border overflow-x-auto">
                         <UTable :columns="columns" :rows="people" />
                     </div>
                 </div>
@@ -268,7 +270,7 @@
                 </div>
 
                 <div
-                    class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-3 gap-4 mt-8 mt-[46px]"
+                    class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 mt-8 mt-[46px]"
                 >
                     <div v-for="item in items" :key="item">
                         <UCard>
