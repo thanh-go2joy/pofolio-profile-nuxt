@@ -14,9 +14,11 @@
                 <div class="flex items-center space-x-2">
                     <!-- <img src="/logo.svg" alt="Logo" class="h-10 w-auto" /> -->
                     <NuxtLink to="/home">
-                        <span class="text-lg font-semibold"
-                            >Nguyễn Thanh Thảo</span
+                        <h1
+                            class="text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text animate-pulse"
                         >
+                            Nguyễn Thanh Thảo
+                        </h1>
                     </NuxtLink>
                 </div>
 
