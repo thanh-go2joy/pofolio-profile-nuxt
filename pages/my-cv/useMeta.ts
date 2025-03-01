@@ -7,12 +7,12 @@ export function useMeta() {
         meta: [
             {
                 name: "description",
-                content: "Thông tin về Nguyễn Thanh Thảo",
+                content: "CV Nguyễn Thanh Thảo",
             },
             { property: "og:title", content: "Nguyễn Thanh Thảo" },
             {
                 property: "og:description",
-                content: "Thông tin về Nguyễn Thanh Thảo",
+                content: "CV Nguyễn Thanh Thảo",
             },
         ],
     });
