@@ -7,7 +7,7 @@
                     <div class="flex-1">
                         <div class="space-y-4">
                             <h1 class="text-2xl font-bold">
-                                Chào mừng đến với Nguyễn Thanh Thảo 🎉
+                                {{ t("welcome_to_me") }}
                             </h1>
                             <p>
                                 là người có kỹ năng, kiến thức và chiến lược bán
@@ -310,6 +310,8 @@ import { ref } from "vue";
 import jobImage from "@/assets/images/job.png";
 import { useMeta } from "./useMeta";
 // import PopupModalWelcome from "@/components/popup/welcome.vue";
+import { useI18n } from "vue-i18n";
+const { t } = useI18n();
 
 useMeta();
 const count = ref(0);

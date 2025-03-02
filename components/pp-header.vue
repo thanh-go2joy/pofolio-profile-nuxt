@@ -54,6 +54,7 @@
                             v-model="selectedLanguage"
                             :options="languages"
                             option-attribute="label"
+                            @change="changeLanguage($event.target.value)"
                         >
                             <template #leading>
                                 <UIcon
@@ -69,20 +70,22 @@
     </header>
 </template>
 
-<script setup lang="ts">
+<!-- <script setup lang="ts"> -->
+<script setup>
+import { useI18n } from "vue-i18n";
 const colorMode = useColorMode();
-
-const navItems = [
-    { label: "CV của tôi", to: "/" },
-    { label: "Story", to: "/about" },
-    { label: "Blog", to: "/services" },
-    { label: "Liên hệ", to: "/contact" },
+const { locale, setLocale } = useI18n();
+// Danh sách ngôn ngữ
+const languages = [
+    { value: "vi", label: "Tiếng Việt" },
+    { value: "en", label: "Tiếng Anh" },
 ];
 
-const languages = ref([
-    { label: "Tiếng Việt", value: "vi" },
-    { label: "English", value: "en" },
-]);
 const selectedLanguage = ref("vi"); // Ngôn ngữ mặc định
+
+// Đổi ngôn ngữ
+const changeLanguage = (lang) => {
+    setLocale(lang);
+};
 </script>
 
