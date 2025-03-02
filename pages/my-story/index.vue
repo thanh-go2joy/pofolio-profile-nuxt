@@ -1,7 +1,6 @@
 <template>
     <div>
-        <h1>Câu chuyện của tôi</h1>
-
+        <h1 class="text-2xl font-bold">Câu chuyện của tôi</h1>
         <div
             class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-3 gap-4 mt-8 mt-[46px]"
         >
