@@ -2,9 +2,9 @@
     <div>
         <UContainer>
             <div class="my-4">
-                <div class="flex items-center justify-between">
+                <div class="grid md:grid-cols-10 gap-6">
                     <!-- Logo bên trái -->
-                    <div class="flex-1">
+                    <div class="col-span-7">
                         <div class="space-y-4">
                             <h1 class="text-2xl font-bold">
                                 {{ t("welcome_to_me") }}
@@ -21,47 +21,62 @@
                                 }}:
                             </p>
                             <div class="flex items-center space-x-6 mt-[16px]">
-                                <img
-                                    src="/assets/images/word.png"
-                                    alt="Ảnh lớn"
-                                    class="w-12 h-12 shadow-lg object-cover"
-                                />
-                                <img
-                                    src="/assets/images/excel.png"
-                                    alt="Ảnh lớn"
-                                    class="w-12 h-12 shadow-lg object-cover"
-                                />
-                                <img
-                                    src="/assets/images/powerpoint.png"
-                                    alt="Ảnh lớn"
-                                    class="w-12 h-12 shadow-lg object-cover"
-                                />
+                                <UTooltip class="space-x-2" text="Word">
+                                    <img
+                                        src="/assets/images/word.png"
+                                        alt="Ảnh lớn"
+                                        class="w-12 h-12 shadow-lg object-cover"
+                                    />
+                                </UTooltip>
+                                <UTooltip class="space-x-2" text="Excel">
+                                    <img
+                                        src="/assets/images/excel.png"
+                                        alt="Ảnh lớn"
+                                        class="w-12 h-12 shadow-lg object-cover"
+                                    />
+                                </UTooltip>
+
+                                <UTooltip class="space-x-2" text="Power Point">
+                                    <img
+                                        src="/assets/images/powerpoint.png"
+                                        alt="Ảnh lớn"
+                                        class="w-12 h-12 shadow-lg object-cover"
+                                    />
+                                </UTooltip>
+
+                                <UTooltip class="space-x-2" text="ERP">
+                                    <img
+                                        src="/assets/images/erp.png"
+                                        alt="Ảnh lớn"
+                                        class="w-12 h-12 shadow-lg object-cover"
+                                    />
+                                </UTooltip>
                             </div>
                             <div class="flex items-start gap-16">
                                 <div class="space-y-4">
                                     <div class="space-y-2">
                                         <p class="mb-1 text-sm font-medium">
-                                            Bán hàng (Sales) - 99%
+                                            {{ t("sales") }} - 90%
                                         </p>
                                         <div
                                             class="w-full bg-gray-200 rounded-full h-3"
                                         >
                                             <div
                                                 class="bg-blue-500 h-3 rounded-full"
-                                                style="width: 99%"
+                                                style="width: 90%"
                                             ></div>
                                         </div>
                                     </div>
                                     <div class="space-y-2">
                                         <p class="mb-1 text-sm font-medium">
-                                            Giao tiếp (Communication) - 70%
+                                            {{ t("communication") }} - 90%
                                         </p>
                                         <div
                                             class="w-full bg-gray-200 rounded-full h-3"
                                         >
                                             <div
                                                 class="bg-green-500 h-3 rounded-full"
-                                                style="width: 70%"
+                                                style="width: 90%"
                                             ></div>
                                         </div>
                                     </div>
@@ -69,27 +84,27 @@
                                 <div class="space-y-4">
                                     <div class="space-y-2">
                                         <p class="mb-1 text-sm font-medium">
-                                            TOEIC (Communication) - 90%
+                                            TOEIC ({{ t("4_skills") }}) - 80%
                                         </p>
                                         <div
                                             class="w-full bg-gray-200 rounded-full h-3"
                                         >
                                             <div
                                                 class="bg-orange-500 h-3 rounded-full"
-                                                style="width: 90%"
+                                                style="width: 80%"
                                             ></div>
                                         </div>
                                     </div>
                                     <div class="space-y-2">
                                         <p class="mb-1 text-sm font-medium">
-                                            HSK (Communication) - Đang cập nhật
+                                            HSK ({{ t("4_skills") }}) - 50%
                                         </p>
                                         <div
                                             class="w-full bg-gray-200 rounded-full h-3"
                                         >
                                             <div
                                                 class="bg-fuchsia-500 h-3 rounded-full"
-                                                style="width: 0%"
+                                                style="width: 50%"
                                             ></div>
                                         </div>
                                     </div>
@@ -99,37 +114,46 @@
 
                         <div>
                             <h1>
-                                Xin chào! Mình là một seller chuyên cung cấp
-                                [sản phẩm/dịch vụ bạn bán]. Cam kết chất lượng,
-                                giá tốt và hỗ trợ tận tâm.
+                                {{ t("introduction_production") }}
                             </h1>
-                            <p>Liên hệ ngay để được tư vấn nhé!</p>
+                            <p>{{ t("contact_us_now_for_consultation") }}</p>
                         </div>
                     </div>
-
                     <!-- Links bên phải -->
-                    <div class="text-center">
+                    <div
+                        class="col-span-3 text-center border p-[24px] shadow-sm"
+                    >
                         <img
                             src="/assets/images/avatar.jpg"
                             alt="Ảnh lớn"
-                            class="w-60 h-60 rounded-full shadow-lg object-cover"
+                            class="rounded-full object-cover"
                         />
 
-                        <div class="mt-[16px] space-x-4">
-                            <UTooltip text="Email">
-                                <UIcon
-                                    name="i-heroicons-envelope"
-                                    class="w-6 h-6 cursor-pointer hover:text-red-600"
-                                    @click="count++"
-                                />
-                            </UTooltip>
+                        <div class="mt-[16px] space-y-2 text-left">
+                            <div>
+                                <UTooltip class="space-x-2" text="Email">
+                                    <UIcon
+                                        name="i-heroicons-envelope"
+                                        class="w-5 h-5"
+                                    />
+                                    <p class="text-md">
+                                        thanhthao051220@gmail.com
+                                    </p>
+                                </UTooltip>
+                            </div>
 
-                            <UTooltip text="Share">
-                                <UIcon
-                                    name="i-heroicons-share"
-                                    class="w-6 h-6 cursor-pointer hover:text-red-600"
-                                />
-                            </UTooltip>
+                            <div>
+                                <UTooltip
+                                    class="space-x-2"
+                                    text="Điện thoại & Zalo"
+                                >
+                                    <UIcon
+                                        name="i-heroicons-share"
+                                        class="w-5 h-5"
+                                    />
+                                    <p class="text-md">(84+) 0908377163</p>
+                                </UTooltip>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -145,121 +169,44 @@
                     </p>
                 </div>
 
+                <!-- <div class="md:flex items-center justify-between md:space-x-6"> -->
                 <div
-                    class="md:flex items-center justify-between space-y-6 md:space-x-6"
+                    class="grid grid-cols-1 md:grid-cols-10 gap-4 md:space-x-6 space-y-12"
                 >
                     <div
-                        class="max-w-xl mx-auto flex flex-col space-y-6 mt-[46px]"
+                        class="col-span-6 max-w-xl mx-auto space-y-6 mt-[46px]"
                     >
-                        <div class="relative flex items-start">
+                        <!-- ===================================== -->
+                        <div
+                            class="relative flex items-start"
+                            v-for="(item, index) in personalJourneys"
+                            :key="index"
+                        >
                             <div
-                                class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white"
+                                class="w-10 h-10 rounded-full flex items-center justify-center text-white"
+                                :class="item.bgColor"
                             >
-                                2022
+                                {{ item.year }}
                             </div>
                             <div
                                 class="h-full w-1 bg-gray-300 absolute top-12 left-5"
                             ></div>
                             <div class="ml-6">
                                 <h3 class="text-lg font-semibold">
-                                    Front end Developer
+                                    {{ setLangTitlePersonalJourneys(index) }}
                                 </h3>
                                 <p class="text-gray-500">
-                                    Công ty CP Go2Joy Việt Nam
+                                    {{ setLangCompanyPersonalJourneys(index) }}
                                 </p>
                                 <p class="text-gray-500">
-                                    5a/2, Trần Phú, phường 4, quận 5, TP.HCM
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="relative flex items-start">
-                            <div
-                                class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white"
-                            >
-                                2021
-                            </div>
-                            <div
-                                class="h-full w-1 bg-gray-300 absolute top-12 left-5"
-                            ></div>
-                            <div class="ml-6">
-                                <h3 class="text-lg font-semibold">
-                                    Tham gia dự án QL Thi Đua Khen Thưởng
-                                </h3>
-                                <p class="text-gray-500">
-                                    Đại học Cảnh Sát Nhân dân
-                                </p>
-                                <p class="text-gray-500">
-                                    36 Nguyễn Hữu Thọ, Tân Hưng, Quận 7, Hồ Chí
-                                    Minh, Vietnam
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="relative flex items-start">
-                            <div
-                                class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white"
-                            >
-                                2020
-                            </div>
-                            <div
-                                class="h-full w-1 bg-gray-300 absolute top-12 left-5"
-                            ></div>
-                            <div class="ml-6">
-                                <h3 class="text-lg font-semibold">
-                                    Tốt nghiệp Kỹ sư ngành CNTT
-                                </h3>
-                                <p class="text-gray-500">Đại học Thủ Dầu Một</p>
-                                <p class="text-gray-500">
-                                    06 Trần Văn Ơn, Phú Hoà, Thủ Dầu Một, Bình
-                                    Dương, Vietnam
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="relative flex items-start">
-                            <div
-                                class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white"
-                            >
-                                2019
-                            </div>
-                            <div
-                                class="h-full w-1 bg-gray-300 absolute top-12 left-5"
-                            ></div>
-                            <div class="ml-6">
-                                <h3 class="text-lg font-semibold">
-                                    Giải 3 cấp trường Dự án QL Thi Đua Khen
-                                    Thưởng
-                                </h3>
-                                <p class="text-gray-500">Đại học Thủ Dầu Một</p>
-                                <p class="text-gray-500">
-                                    06 Trần Văn Ơn, Phú Hoà, Thủ Dầu Một, Bình
-                                    Dương, Vietnam
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="relative flex items-start">
-                            <div
-                                class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center text-white"
-                            >
-                                2016
-                            </div>
-                            <div class="ml-6">
-                                <h3 class="text-lg font-semibold">
-                                    Nhập học ngành Hệ Thống Thông Tin
-                                </h3>
-                                <p class="text-gray-500">Đại học Thủ Dầu Một</p>
-                                <p class="text-gray-500">
-                                    06 Trần Văn Ơn, Phú Hoà, Thủ Dầu Một, Bình
-                                    Dương, Vietnam
+                                    {{ setLangAddressPersonalJourneys(index) }}
                                 </p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="border overflow-x-auto">
-                        <UTable :columns="columns" :rows="people" />
+                    <div class="col-span-4 border overflow-x-auto">
+                        <UTable :columns="columns" :rows="personalJourneys" />
                     </div>
                 </div>
             </div>
@@ -277,7 +224,7 @@
                 <div
                     class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 mt-8 mt-[46px]"
                 >
-                    <div v-for="item in items" :key="item">
+                    <div v-for="item in projects" :key="item">
                         <UCard>
                             <template #header>
                                 <p class="text-1xl font-bold text-center">
@@ -291,12 +238,15 @@
                                 class="object-cover"
                             />
                             <div class="space-y-4 mt-3">
-                                <p>{{ item.description }}</p>
-                                <p>Công cụ: {{ item.toolkit }}</p>
+                                <UTooltip :text="item.description">
+                                    <p class="line-clamp-2">
+                                        {{ item.description }}
+                                    </p>
+                                </UTooltip>
                             </div>
 
                             <template #footer>
-                                <p>Năm: {{ item.finishTime }}</p>
+                                <p>{{ t("year") }}: {{ item.finishTime }}</p>
                             </template>
                         </UCard>
                     </div>
@@ -311,101 +261,203 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { computed } from "vue";
 import jobImage from "@/assets/images/job.png";
 import { useMeta } from "./useMeta";
 // import PopupModalWelcome from "@/components/popup/welcome.vue";
 import { useI18n } from "vue-i18n";
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 useMeta();
-const count = ref(0);
 
-const items = [
+const projects = computed(() => [
     {
         image: jobImage,
-        title: "Dự án Website Kỷ Nguyên Land",
-        description:
-            "Hỗ trợ khách hàng tìm kiếm thông tin đất đai, và bật động sản khác..",
-        toolkit: "GitHub, JS",
-        finishTime: "2022",
-    },
-    {
-        image: jobImage,
-        title: "Dự án Website Trọ đây rồi",
-        description: "Hỗ trợ khách hàng tìm thuê trợ ở vị trí gần nhất,...",
-        toolkit: "GitHub, JS",
+        title: setLangTitleProjects(0),
+        description: setLangDescriptionProjects(0),
         finishTime: "2023",
     },
-    {
-        image: jobImage,
-        title: "Dự án Website Nghe nhạc",
-        description:
-            "Nâng cấp đam mê và sở thích nghe nhạc của khách hàng miễn phí,...",
-        toolkit: "GitHub, JS",
-        finishTime: "2023",
-    },
-    {
-        image: jobImage,
-        title: "Dự án QL Thi đua Khen thưởng",
-        description:
-            "Hỗ trợ Công chức, Viên chức quản lý được thành tích theo thời gian thực,...",
-        toolkit: "GitHub, JS",
-        finishTime: "2024",
-    },
-    {
-        image: jobImage,
-        title: "Dự án App Play Music",
-        description:
-            "Đang trong quá trình Demo, Sẽ được triển khai trong thời gian sắp tới,...",
-        toolkit: "GitHub, Flutter",
-        finishTime: "2024",
-    },
-];
+]);
 
 const columns = [
     {
-        key: "id",
-        label: "ID",
-    },
-    {
-        key: "name",
-        label: "User name",
+        key: "year",
+        label: t("year"),
     },
     {
         key: "title",
-        label: "Job position",
+        label: t("title"),
     },
     {
-        key: "email",
-        label: "Email",
-    },
-    {
-        key: "role",
-        label: "Role",
+        key: "company",
+        label: t("company"),
     },
 ];
-const people = [
+
+const personalJourneys = [
     {
-        id: 1,
-        name: "Lindsay Walton",
-        title: "Front-end Developer",
-        email: "lindsay.walton@example.com",
-        role: "Member",
+        title: "Sales Staff",
+        company: "Far Eastern Polytex (Viet Nam) Limited",
+        address:
+            "Land lot B_5B_CN, Road DC, Bau Bang Industrial Park, Lai Uyen Town, Bau Bang District, Binh Duong Province, Vietnam.",
+        year: "2023",
+        bgColor: "bg-purple-500",
     },
     {
-        id: 2,
-        name: "Courtney Henry",
-        title: "Designer",
-        email: "courtney.henry@example.com",
-        role: "Admin",
+        title: "GraduationThu Dau Mot University",
+        company: "Thu Dau Mot University",
+        address: "06 Tran Van On, Phu Hoa, Thu Dau Mot, Binh Duong, Vietnam",
+        year: "2023",
+        bgColor: "bg-red-500",
     },
     {
-        id: 3,
-        name: "Tom Cook",
-        title: "Director of Product",
-        email: "tom.cook@example.com",
-        role: "Member",
+        title: "English teacher & Reception",
+        company: "Than Dong Language School",
+        address: "394 Hung Vuong, An Dien, Ben Cat, Binh Duong",
+        year: "2021",
+        bgColor: "bg-green-500",
+    },
+    {
+        title: "Student & Part Time Staff",
+        company: "Wall Street English Binh Duong",
+        address: "736 August Revolution, Chanh Nghia, Thu Dau Mot, Binh Duong",
+        year: "2019",
+        bgColor: "bg-blue-500",
     },
 ];
+
+const setLangTitlePersonalJourneys = (value) => {
+    switch (value) {
+        case 0:
+            if (locale.value === "en") {
+                return "Sales Staff";
+            } else if (locale.value === "zh") {
+                return "销售员";
+            }
+            return "Nhân viên kinh doanh";
+        case 1:
+            if (locale.value === "en") {
+                return "GraduationThu Dau Mot University";
+            } else if (locale.value === "zh") {
+                return "毕业于首油一大学";
+            }
+            return "Tốt nghiệp Trường Đại học Thủ Dầu Một";
+        case 2:
+            if (locale.value === "en") {
+                return "English teacher & Reception";
+            } else if (locale.value === "zh") {
+                return "英语老师 & 前台接待";
+            }
+            return "Giáo viên tiếng Anh & Lễ tân";
+        case 3:
+            if (locale.value === "en") {
+                return "Student & Part Time Staff";
+            } else if (locale.value === "zh") {
+                return "学生 & 兼职员工";
+            }
+            return "Sinh viên & Nhân viên bán thời gian";
+        default:
+            return "";
+    }
+};
+
+const setLangCompanyPersonalJourneys = (value) => {
+    switch (value) {
+        case 0:
+            if (locale.value === "en") {
+                return "Far Eastern Polytex (Viet Nam) Limited";
+            } else if (locale.value === "zh") {
+                return "远东新世纪（越南）有限公司";
+            }
+            return "Công ty TNHH Far Eastern Polytex (Việt Nam)";
+        case 1:
+            if (locale.value === "en") {
+                return "GraduationThu Dau Mot University";
+            } else if (locale.value === "zh") {
+                return "毕业于首油一大学";
+            }
+            return "Tốt nghiệp Trường Đại học Thủ Dầu Một";
+        case 2:
+            if (locale.value === "en") {
+                return "Than Dong Language School";
+            } else if (locale.value === "zh") {
+                return "神童语言学校";
+            }
+            return "rường Ngoại Ngữ Thần Đồng";
+        case 3:
+            if (locale.value === "en") {
+                return "Wall Street English Binh Duong";
+            } else if (locale.value === "zh") {
+                return "华尔街英语平阳";
+            }
+            return "Wall Street English Bình Dương";
+        default:
+            return "";
+    }
+};
+
+const setLangAddressPersonalJourneys = (value) => {
+    switch (value) {
+        case 0:
+            if (locale.value === "en") {
+                return "Land lot B_5B_CN, Road DC, Bau Bang Industrial Park, Lai Uyen Town, Bau Bang District, Binh Duong Province, Vietnam.";
+            } else if (locale.value === "zh") {
+                return "B_5B_CN 地块，DC 路，包邦工业园，赖渊镇，包邦县，平阳省，越南。";
+            }
+            return "Lô đất B_5B_CN, Đường DC, Khu công nghiệp Bàu Bàng, Thị trấn Lai Uyên, Huyện Bàu Bàng, Tỉnh Bình Dương, Việt Nam.";
+        case 1:
+            if (locale.value === "en") {
+                return "06 Tran Van On, Phu Hoa, Thu Dau Mot, Binh Duong, Vietnam";
+            } else if (locale.value === "zh") {
+                return "06 陈文恩街，富和，首油一市，平阳省，越南。";
+            }
+            return "06 Trần Văn Ơn, Phú Hòa, Thủ Dầu Một, Bình Dương, Việt Nam.";
+        case 2:
+            if (locale.value === "en") {
+                return "394 Hung Vuong, An Dien, Ben Cat, Binh Duong";
+            } else if (locale.value === "zh") {
+                return "394 雄王街，安延，笨葛市，平阳省。";
+            }
+            return "394 Hùng Vương, An Điền, Bến Cát, Bình Dương.";
+        case 3:
+            if (locale.value === "en") {
+                return "736 August Revolution, Chanh Nghia, Thu Dau Mot, Binh Duong";
+            } else if (locale.value === "zh") {
+                return "736 八月革命街，正义坊，首油一市，平阳省。";
+            }
+            return "736 Cách Mạng Tháng Tám, Chánh Nghĩa, Thủ Dầu Một, Bình Dương.";
+        default:
+            return "";
+    }
+};
+
+// ======================== LANG FOR PROJECT ========================
+const setLangTitleProjects = (value) => {
+    switch (value) {
+        case 0:
+            if (locale.value === "en") {
+                return "Import Activities of Raw Materials at NB Nam Phuong Co., Ltd.";
+            } else if (locale.value === "zh") {
+                return "在 NB 南方有限公司的原材料进口活动";
+            }
+            return "HOẠT ĐỘNG NHẬP KHẨU NGUYÊN VẬT LIỆU TẠI CÔNG TY TNHH NB NAM PHƯƠNG";
+
+        default:
+            return "";
+    }
+};
+const setLangDescriptionProjects = (value) => {
+    switch (value) {
+        case 0:
+            if (locale.value === "en") {
+                return "In order to overcome the consequences of the Covid pandemic and help businesses escape from severe crises, this project focuses on researching and studying raw materials to provide the best solutions for enterprises. Additionally, it aims to enhance the quality of output products, ensuring high-quality and safe products for consumers while also generating high profits for businesses, thereby driving Vietnam's economic growth.";
+            } else if (locale.value === "zh") {
+                return "为了克服新冠疫情带来的影响，并帮助企业摆脱严重的危机，本项目专注于研究和分析原材料，以为企业提供最佳解决方案。此外，该项目还旨在提高产品质量，确保为消费者提供优质、安全的产品，同时为企业创造高利润，从而推动越南经济发展。";
+            }
+            return "Nhằm khắc phục hậu quả của đại dịch Covid, đưa doanh nghiệp thoát khỏi tình trạng khủng hoảng nặng nề. Tìm hiểu và nghiên cứu nguyên vật liệu đầu vào mang lại những giải pháp tốt nhất cho doanh nghiệp. Ngoài ra, dự án này còn giúp nâng cao chất lượng sản phẩm đầu ra, đem lại nguồn sản phẩm tốt, an toàn cho người tiêu dùng và đồng thời mang lại lợi nhuận cao cho các doanh nghiệp, thúc đẩy nền kinh tế Việt Nam phát triển.";
+
+        default:
+            return "";
+    }
+};
 </script>
