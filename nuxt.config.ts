@@ -6,7 +6,8 @@ export default defineNuxtConfig({
     i18n: {
       locales: [
         { code: 'en', iso: 'en-US', file: 'en.json', name: 'English' },
-        { code: 'vi', iso: 'vi-VN', file: 'vi.json', name: 'Tiếng Việt' }
+        { code: 'vi', iso: 'vi-VN', file: 'vi.json', name: 'Tiếng Việt' },
+        { code: 'zh', iso: 'zh-CN', file: 'zh.json', name: '中文（简体)' },
       ],
       lazy: true,
       langDir: 'locales',

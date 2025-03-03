@@ -79,6 +79,7 @@ const { locale, setLocale } = useI18n();
 const languages = [
     { value: "vi", label: "Tiếng Việt" },
     { value: "en", label: "Tiếng Anh" },
+    { value: "zh", label: "Tiếng Trung" },
 ];
 
 const selectedLanguage = ref("vi"); // Ngôn ngữ mặc định
