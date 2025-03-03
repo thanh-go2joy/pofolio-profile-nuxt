@@ -10,17 +10,16 @@
                                 {{ t("welcome_to_me") }}
                             </h1>
                             <p>
-                                là người có kỹ năng, kiến thức và chiến lược bán
-                                hàng bài bản. Họ hiểu rõ sản phẩm, khách hàng,
-                                thị trường và sử dụng các kỹ thuật như đàm phán,
-                                chăm sóc khách hàng, xây dựng thương hiệu cá
-                                nhân để gia tăng doanh số và duy trì mối quan hệ
-                                lâu dài với khách hàng.
+                                {{ t("introduction") }}
                             </p>
                         </div>
 
                         <div class="my-[30px] space-y-4">
-                            <p>Tôi thành thạo các công nghệ, công cụ:</p>
+                            <p>
+                                {{
+                                    t("technologies_tools_i_am_proficient_in")
+                                }}:
+                            </p>
                             <div class="flex items-center space-x-6 mt-[16px]">
                                 <img
                                     src="/assets/images/word.png"
@@ -138,9 +137,11 @@
 
             <div class="my-24">
                 <div class="space-y-4">
-                    <h1 class="text-5xl font-bold text-center">Hành trình</h1>
+                    <h1 class="text-5xl font-bold text-center">
+                        {{ t("personal_journey") }}
+                    </h1>
                     <p class="text-center">
-                        Các bước phát triển của bản thân qua từng thời kỳ!
+                        {{ t("personal_development_steps_over_time") }}
                     </p>
                 </div>
 
@@ -265,8 +266,12 @@
 
             <div class="my-4">
                 <div class="space-y-4">
-                    <h1 class="text-5xl font-bold text-center">Dự án</h1>
-                    <p class="text-center">Kinh nghiệm giải quyết các dự án!</p>
+                    <h1 class="text-5xl font-bold text-center">
+                        {{ t("Projects") }}
+                    </h1>
+                    <p class="text-center">
+                        {{ t("project_handling_experience") }}
+                    </p>
                 </div>
 
                 <div
