@@ -23,8 +23,10 @@
                 </div>
 
                 <!-- Links bên phải -->
-                <div class="md:flex items-center space-x-4 md:space-x-6">
-                    <NuxtLink to="/my-cv" class="hover:text-blue-600">{{
+                <div
+                    class="flex items-center justify-end space-x-4 md:space-x-6 mt-[8px] md:mt-[0px]"
+                >
+                    <!-- <NuxtLink to="/my-cv" class="hover:text-blue-600">{{
                         t("my_cv")
                     }}</NuxtLink>
                     <NuxtLink to="/my-story" class="hover:text-blue-600">{{
@@ -33,7 +35,7 @@
                     <NuxtLink to="/blog" class="hover:text-blue-600">{{
                         t("blog")
                     }}</NuxtLink>
-                    <span class="border-l border-gray-400 h-5"></span>
+                    <span class="border-l border-gray-400 h-5"></span> -->
                     <UButton
                         @click="
                             colorMode.preference =
