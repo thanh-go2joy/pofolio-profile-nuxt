@@ -24,15 +24,15 @@
 
                 <!-- Links bên phải -->
                 <div class="md:flex items-center space-x-4 md:space-x-6">
-                    <NuxtLink to="/my-cv" class="hover:text-blue-600"
-                        >CV của tôi</NuxtLink
-                    >
-                    <NuxtLink to="/my-story" class="hover:text-blue-600"
-                        >Câu chuyện</NuxtLink
-                    >
-                    <NuxtLink to="/blog" class="hover:text-blue-600"
-                        >Blog</NuxtLink
-                    >
+                    <NuxtLink to="/my-cv" class="hover:text-blue-600">{{
+                        t("my_cv")
+                    }}</NuxtLink>
+                    <NuxtLink to="/my-story" class="hover:text-blue-600">{{
+                        t("story")
+                    }}</NuxtLink>
+                    <NuxtLink to="/blog" class="hover:text-blue-600">{{
+                        t("blog")
+                    }}</NuxtLink>
                     <span class="border-l border-gray-400 h-5"></span>
                     <UButton
                         @click="
@@ -43,9 +43,9 @@
                         "
                     >
                         <span v-if="colorMode.preference === 'dark'"
-                            >🌙 Tối</span
+                            >🌙 {{ t("night") }}</span
                         >
-                        <span v-else>☀️ Sáng</span>
+                        <span v-else>☀️ {{ t("light") }}</span>
                     </UButton>
                     <span class="border-l border-gray-400 h-5"></span>
 
@@ -54,6 +54,7 @@
                             v-model="selectedLanguage"
                             :options="languages"
                             option-attribute="label"
+                            @change="changeLanguage($event.target.value)"
                         >
                             <template #leading>
                                 <UIcon
@@ -69,20 +70,23 @@
     </header>
 </template>
 
-<script setup lang="ts">
+<script setup>
+import { useI18n } from "vue-i18n";
 const colorMode = useColorMode();
+const { locale, setLocale, t } = useI18n();
 
-const navItems = [
-    { label: "CV của tôi", to: "/" },
-    { label: "Story", to: "/about" },
-    { label: "Blog", to: "/services" },
-    { label: "Liên hệ", to: "/contact" },
+// Danh sách ngôn ngữ
+const languages = [
+    { value: "vi", label: "Tiếng Việt" },
+    { value: "en", label: "Tiếng Anh" },
+    { value: "zh", label: "Tiếng Trung" },
 ];
 
-const languages = ref([
-    { label: "Tiếng Việt", value: "vi" },
-    { label: "English", value: "en" },
-]);
 const selectedLanguage = ref("vi"); // Ngôn ngữ mặc định
+
+// Đổi ngôn ngữ
+const changeLanguage = (lang) => {
+    setLocale(lang);
+};
 </script>
 

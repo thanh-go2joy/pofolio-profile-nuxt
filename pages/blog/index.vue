@@ -1,7 +1,6 @@
 <template>
     <div>
-        <h1>Danh sách Blog</h1>
-
+        <h1 class="text-2xl font-bold">Danh sách Blog</h1>
         <div
             class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-4 mt-8 mt-[46px]"
         >

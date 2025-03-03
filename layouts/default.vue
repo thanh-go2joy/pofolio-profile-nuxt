@@ -12,9 +12,3 @@
         <PpFooter />
     </div>
 </template>
-
-<script setup>
-const navigateTo = (path) => {
-    useRouter().push(path);
-};
-</script>
