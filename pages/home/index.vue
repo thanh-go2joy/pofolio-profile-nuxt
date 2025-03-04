@@ -256,14 +256,22 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { computed, onMounted } from "vue";
 import jobImage from "@/assets/images/job.png";
 import { useMeta } from "./useMeta";
 // import PopupModalWelcome from "@/components/popup/welcome.vue";
 import { useI18n } from "vue-i18n";
 const { t, locale } = useI18n();
+const { $amplitude } = useNuxtApp();
 
 useMeta();
+
+onMounted(() => {
+    $amplitude.track("View Home Page", {
+        page: "Home",
+        time: new Date().toISOString(),
+    });
+});
 
 const projects = computed(() => [
     {
