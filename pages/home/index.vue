@@ -335,7 +335,7 @@ const setLangTitlePersonalJourneys = (value) => {
             } else if (locale.value === "zh") {
                 return "学生 & 兼职员工";
             }
-            return "Sinh viên & Nhân viên bán thời gian";
+            return "Học viên & Nhân viên bán thời gian";
         default:
             return "";
     }
@@ -363,7 +363,7 @@ const setLangCompanyPersonalJourneys = (value) => {
             } else if (locale.value === "zh") {
                 return "神童语言学校";
             }
-            return "Trường Ngoại Ngữ Thần Đồng";
+            return "Trung tâm anh ngữ Thần Đồng";
         case 3:
             if (locale.value === "en") {
                 return "Wall Street English Binh Duong";
