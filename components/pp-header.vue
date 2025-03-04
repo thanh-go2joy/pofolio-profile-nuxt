@@ -73,9 +73,10 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from "vue";
 import { useI18n } from "vue-i18n";
 const colorMode = useColorMode();
-const { locale, setLocale, t } = useI18n();
+const { locale, t } = useI18n();
 
 // Danh sách ngôn ngữ
 const languages = [
@@ -84,11 +85,16 @@ const languages = [
     { value: "zh", label: "Tiếng Trung" },
 ];
 
-const selectedLanguage = ref("vi"); // Ngôn ngữ mặc định
+const selectedLanguage = ref("en"); // Ngôn ngữ mặc định
+
+onMounted(() => {
+    selectedLanguage.value = localStorage.getItem("locale");
+});
 
 // Đổi ngôn ngữ
 const changeLanguage = (lang) => {
-    setLocale(lang);
+    locale.value = lang;
+    localStorage.setItem("locale", lang);
 };
 </script>
 
