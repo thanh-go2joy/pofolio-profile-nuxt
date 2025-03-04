@@ -2,9 +2,11 @@
     <div>
         <UContainer>
             <div class="my-4">
-                <div class="grid md:grid-cols-10 gap-6">
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-10 gap-6"
+                >
                     <!-- Logo bên trái -->
-                    <div class="col-span-7">
+                    <div class="col-span-6 xl:col-span-7">
                         <div class="space-y-4">
                             <h1 class="text-2xl font-bold">
                                 {{ t("welcome_to_me") }}
@@ -121,14 +123,15 @@
                     </div>
                     <!-- Links bên phải -->
                     <div
-                        class="col-span-3 text-center border p-[24px] shadow-sm"
+                        class="col-span-4 xl:col-span-3 text-center border p-[24px] shadow-sm flex lg:block space-x-6"
                     >
-                        <img
-                            src="/assets/images/avatar.jpg"
-                            alt="Ảnh lớn"
-                            class="rounded-full object-cover"
-                        />
-
+                        <div class="w-20 lg:w-full">
+                            <img
+                                src="/assets/images/avatar.jpg"
+                                alt="Ảnh lớn"
+                                class="rounded-full object-cover"
+                            />
+                        </div>
                         <div class="mt-[16px] space-y-2 text-left">
                             <div>
                                 <UTooltip class="space-x-2" text="Email">
@@ -169,10 +172,6 @@
                     </p>
                 </div>
 
-                <!-- <div class="md:flex items-center justify-between md:space-x-6"> -->
-                <!-- <div
-                    class="grid grid-cols-1 md:grid-cols-10 gap-4 md:space-x-6 space-y-12"
-                > -->
                 <div class="gap-4 md:space-x-6 space-y-12">
                     <div class="col-span-6 space-y-6 mt-[46px]">
                         <!-- ===================================== -->
@@ -217,7 +216,7 @@
                 </div>
 
                 <div
-                    class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 mt-8 mt-[46px]"
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 mt-[46px]"
                 >
                     <div v-for="item in projects" :key="item">
                         <UCard>
