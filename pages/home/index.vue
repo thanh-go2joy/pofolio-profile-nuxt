@@ -161,7 +161,7 @@
 
             <div class="my-24">
                 <div class="space-y-4">
-                    <h1 class="text-5xl font-bold text-center">
+                    <h1 class="text-2xl md:text-5xl font-bold text-center">
                         {{ t("personal_journey") }}
                     </h1>
                     <p class="text-center">
@@ -204,16 +204,12 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-span-4 border overflow-x-auto">
-                        <UTable :columns="columns" :rows="personalJourneys" />
-                    </div>
                 </div>
             </div>
 
             <div class="my-4">
                 <div class="space-y-4">
-                    <h1 class="text-5xl font-bold text-center">
+                    <h1 class="text-2xl md:text-5xl font-bold text-center">
                         {{ t("Projects") }}
                     </h1>
                     <p class="text-center">
@@ -278,21 +274,6 @@ const projects = computed(() => [
         finishTime: "2023",
     },
 ]);
-
-const columns = [
-    {
-        key: "year",
-        label: t("year"),
-    },
-    {
-        key: "title",
-        label: t("title"),
-    },
-    {
-        key: "company",
-        label: t("company"),
-    },
-];
 
 const personalJourneys = [
     {
