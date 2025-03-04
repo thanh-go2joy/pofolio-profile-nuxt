@@ -145,7 +145,7 @@
                             <div>
                                 <UTooltip
                                     class="space-x-2"
-                                    text="Điện thoại & Zalo"
+                                    :text="t('phone_zalo')"
                                 >
                                     <UIcon
                                         name="i-heroicons-share"
@@ -161,7 +161,7 @@
 
             <div class="my-24">
                 <div class="space-y-4">
-                    <h1 class="text-5xl font-bold text-center">
+                    <h1 class="text-2xl md:text-5xl font-bold text-center">
                         {{ t("personal_journey") }}
                     </h1>
                     <p class="text-center">
@@ -170,12 +170,11 @@
                 </div>
 
                 <!-- <div class="md:flex items-center justify-between md:space-x-6"> -->
-                <div
+                <!-- <div
                     class="grid grid-cols-1 md:grid-cols-10 gap-4 md:space-x-6 space-y-12"
-                >
-                    <div
-                        class="col-span-6 max-w-xl mx-auto space-y-6 mt-[46px]"
-                    >
+                > -->
+                <div class="gap-4 md:space-x-6 space-y-12">
+                    <div class="col-span-6 space-y-6 mt-[46px]">
                         <!-- ===================================== -->
                         <div
                             class="relative flex items-start"
@@ -183,13 +182,13 @@
                             :key="index"
                         >
                             <div
-                                class="w-10 h-10 rounded-full flex items-center justify-center text-white"
+                                class="w-10 h-10 text-center rounded-full flex items-center justify-center text-white"
                                 :class="item.bgColor"
                             >
-                                {{ item.year }}
+                                <p class="p-1">{{ item.year }}</p>
                             </div>
                             <div
-                                class="h-full w-1 bg-gray-300 absolute top-12 left-5"
+                                class="h-full w-1 bg-gray-300 absolute top-10 left-5 md:left-5"
                             ></div>
                             <div class="ml-6">
                                 <h3 class="text-lg font-semibold">
@@ -204,16 +203,12 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-span-4 border overflow-x-auto">
-                        <UTable :columns="columns" :rows="personalJourneys" />
-                    </div>
                 </div>
             </div>
 
             <div class="my-4">
                 <div class="space-y-4">
-                    <h1 class="text-5xl font-bold text-center">
+                    <h1 class="text-2xl md:text-5xl font-bold text-center">
                         {{ t("Projects") }}
                     </h1>
                     <p class="text-center">
@@ -278,21 +273,6 @@ const projects = computed(() => [
         finishTime: "2023",
     },
 ]);
-
-const columns = [
-    {
-        key: "year",
-        label: t("year"),
-    },
-    {
-        key: "title",
-        label: t("title"),
-    },
-    {
-        key: "company",
-        label: t("company"),
-    },
-];
 
 const personalJourneys = [
     {
