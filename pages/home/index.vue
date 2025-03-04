@@ -363,7 +363,7 @@ const setLangCompanyPersonalJourneys = (value) => {
             } else if (locale.value === "zh") {
                 return "神童语言学校";
             }
-            return "rường Ngoại Ngữ Thần Đồng";
+            return "Trường Ngoại Ngữ Thần Đồng";
         case 3:
             if (locale.value === "en") {
                 return "Wall Street English Binh Duong";
